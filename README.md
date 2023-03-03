@@ -1,7 +1,20 @@
-# Vue 3 + Vite
+# Vue 3 Breeze API
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Introduction 
+This is frontend project which call [Laravel Auth API](https://github.com/ratnesh-gupta/laravel-auth-api) 
 
-## Recommended IDE Setup
+## Requirements
+- NPM > 8.*
+- VUE JS = 3
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Setup 
+Run command to install
+
+
+
+
+## Install Vue Router
+To install vue-router we run command ``npm install vue-router@4``
+
+## Install Pinia
+to install Pinia ``npm install pinia``
