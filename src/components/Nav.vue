@@ -1,32 +1,67 @@
 <script setup>
 
-
 </script>
+
 <template>
-  <!-- component -->
-  <nav id="header" class="w-full z-30 top-10 py-1 bg-white shadow-lg border-b border-blue-400 mt-24">
-    <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
-      <label for="menu-toggle" class="cursor-pointer md:hidden block">
-        <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <title>menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+  <nav class="rounded bg-indigo-900 text-white px-2 py-2.5 sm:px-4">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+      <a href="https://laraveller.com/" class="flex items-center">
+        Laraveller
+      </a>
+      <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="
+          ml-3
+          inline-flex
+          items-center
+          rounded-lg
+          p-2
+          text-sm text-gray-500
+          hover:bg-gray-100
+          focus:outline-none focus:ring-2 focus:ring-gray-200
+          dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600
+          md:hidden
+        "
+          aria-controls="navbar-default"
+          aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+            class="h-6 w-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+          ></path>
         </svg>
-      </label>
-      <input class="hidden" type="checkbox" id="menu-toggle">
-
-      <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
-        <nav>
-          <ul class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
-            <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="#">Home</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
-        <div class="auth flex items-center w-full md:w-full">
-          <button class="bg-transparent text-gray-800  p-2 rounded border border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700">Sign in</button>
-          <button class="bg-blue-600 text-gray-200  p-2 rounded  hover:bg-blue-500 hover:text-gray-100">Sign up</button>
-        </div>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="mt-4 flex flex-col rounded-lg p-4 md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+          <li>
+            <router-link
+                :to="{ name: 'Home' }"
+                class="block rounded py-2 pr-4 pl-3 text-white" aria-current="page">Home
+            </router-link>
+          </li>
+          <li>
+            <router-link
+                :to="{ name: 'Login' }"
+                class="block rounded   py-2  pr-4 pl-3  text-gray-50 hover:bg-gray-700">Login
+            </router-link>
+          </li>
+          <li>
+            <router-link
+                :to="{ name: 'Register' }"
+                class="block  rounded py-2 pr-4 pl-3 text-gray-50 hover:bg-gray-700 md:border-0">Register
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
