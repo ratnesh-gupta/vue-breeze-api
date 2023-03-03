@@ -15,3 +15,6 @@ Run command to install
 
 ## Install Vue Router
 To install vue-router we run command ``npm install vue-router@4``
+
+## Install Pinia
+to install Pinia ``npm install pinia``
