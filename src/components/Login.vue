@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from "vue";
-
+import { useAuthStore } from "../stores/auth";
+const authStore = useAuthStore();
 const form = ref({
   email: "",
   password: "",
 });
 </script>
-
 <template>
   <section class="bg-[#F4F7FF] py-20 lg:py-[120px]">
     <div class="container mx-auto">
@@ -27,8 +27,8 @@ const form = ref({
               md:px-[60px]
             "
           >
-            <div class="mb-10 text-center md:mb-16">Laraveller</div>
-            <form>
+            <div class="mb-10 text-center md:mb-16">Laravel + Vue</div>
+            <form @submit.prevent="authStore.handleLogin(form)">
               <div class="mb-6">
                 <input
                     type="email"
@@ -49,7 +49,11 @@ const form = ref({
                     focus-visible:shadow-none
                   "
                 />
-
+                <div v-if="authStore.errors.email" class="flex">
+                  <span class="text-red-400 text-sm m-2 p-2">{{
+                      authStore.errors.email[0]
+                    }}</span>
+                </div>
               </div>
               <div class="mb-6">
                 <input
@@ -71,7 +75,11 @@ const form = ref({
                     focus-visible:shadow-none
                   "
                 />
-
+                <div v-if="authStore.errors.password" class="flex">
+                  <span class="text-red-400 text-sm m-2 p-2">{{
+                      authStore.errors.password[0]
+                    }}</span>
+                </div>
               </div>
               <div class="mb-10">
                 <button
@@ -91,7 +99,7 @@ const form = ref({
               </div>
             </form>
             <router-link
-                :to="{name:'Forgot'}"
+                to="/forgot-password"
                 class="
                 mb-2
                 inline-block
